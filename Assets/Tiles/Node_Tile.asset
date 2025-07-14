@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: PowerPellet_Tile
+  m_Name: Node_Tile
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 0}
-  m_DefaultGameObject: {fileID: 3050855641357253576, guid: f5abdcde2cfbea44c948d84dc035eda7, type: 3}
-  m_DefaultColliderType: 0
+  m_DefaultSprite: {fileID: 21300000, guid: d6b4d817e1595104b99f3bc9da892c1d, type: 3}
+  m_DefaultGameObject: {fileID: 5630443931725711856, guid: c231c83eed4666841b0ae79feff0d745, type: 3}
+  m_DefaultColliderType: 1
   m_TilingRules: []
