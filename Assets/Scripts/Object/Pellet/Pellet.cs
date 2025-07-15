@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Pellet : MonoBehaviour
 {
-    public virtual int Points => 10;
+    public int Points = 10;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
