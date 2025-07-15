@@ -22,6 +22,8 @@ public class Ghost : MonoBehaviour
         ghostScatter = GetComponent<GhostScatter>();
         ghostFrightened = GetComponent<GhostFrightened>();
         ghostChase = GetComponent<GhostChase>();
+
+        //Debug.Log($"[{name}] GhostHome bileşeni: {ghostHome?.name}, InstanceID: {ghostHome?.GetInstanceID()}");
     }
 
     void Start()
@@ -39,7 +41,10 @@ public class Ghost : MonoBehaviour
         ghostScatter.Enable();
 
         if (ghostHome != ghostInitialBehaviour)
+        {
+            Debug.LogWarning($"{name}: ghostHome != ghostInitialBehaviour olduğu için Disable() çağrılıyor.");
             ghostHome.Disable();
+        }
 
         if (ghostInitialBehaviour != null)
             ghostInitialBehaviour.Enable();

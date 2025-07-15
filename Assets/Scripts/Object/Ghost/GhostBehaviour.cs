@@ -8,12 +8,12 @@ public class GhostBehaviour : MonoBehaviour
     void Awake()
     {
         ghost = GetComponent<Ghost>();
-
+        //enabled = false;
     }
 
     void Start()
     {
-        enabled = false;
+
     }
 
     public virtual void Enable()

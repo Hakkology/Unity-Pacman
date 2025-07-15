@@ -13,7 +13,7 @@ public class GhostHome : GhostBehaviour
 
     void OnDisable()
     {
-        if (gameObject.activeInHierarchy)
+        if (gameObject.activeSelf)
             StartCoroutine(ExitTransition());
     }
 
@@ -51,5 +51,13 @@ public class GhostHome : GhostBehaviour
         ghost.ghostMovementController.SetDirection(new Vector2(Random.value < 0.5f ? -1.0f : 1.0f, 0.0f), true);
         ghost.ghostRigidbody.isKinematic = false;
         ghost.ghostMovementController.enabled = true;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (enabled && collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+        {
+            ghost.ghostMovementController.SetDirection(-ghost.ghostMovementController.charCurrentDirection);
+        }
     }
 }

@@ -4,7 +4,7 @@ public class GhostChase : GhostBehaviour
 {
     void OnEnable()
     {
-        Debug.Log("ghost chase mode.");
+        //Debug.Log("ghost chase mode.");
     }
     void OnDisable()
     {

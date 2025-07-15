@@ -4,7 +4,7 @@ public class GhostScatter : GhostBehaviour
 {
     void OnEnable()
     {
-        Debug.Log("ghost scatter mode.");
+        //Debug.Log("ghost scatter mode.");
     }
     void OnDisable()
     {

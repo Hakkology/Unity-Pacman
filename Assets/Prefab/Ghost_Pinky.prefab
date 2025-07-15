@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2617221974392243694, guid: 0c7557e5fcaf54bfe8d86830b837c179, type: 3}
       propertyPath: charInitialDirection.y
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4093818920382808574, guid: 0c7557e5fcaf54bfe8d86830b837c179, type: 3}
       propertyPath: ghostInitialBehaviour
