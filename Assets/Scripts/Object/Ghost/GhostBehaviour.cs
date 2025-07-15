@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class GhostBehaviour : MonoBehaviour
 {
-    public Ghost Ghost { get; private set; }
+    public Ghost ghost { get; private set; }
     public float behaviourDuration;
 
     void Awake()
     {
-        Ghost = GetComponent<Ghost>();
+        ghost = GetComponent<Ghost>();
         enabled = false;
     }
 
