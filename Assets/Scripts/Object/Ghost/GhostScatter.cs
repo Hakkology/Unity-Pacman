@@ -2,10 +2,18 @@ using UnityEngine;
 
 public class GhostScatter : GhostBehaviour
 {
+    void OnEnable()
+    {
+        Debug.Log("ghost scatter mode.");
+    }
+    void OnDisable()
+    {
+        ghost.ghostChase.Enable();
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         MapNode node = collision.GetComponent<MapNode>();
-        if (node != null && !enabled && !ghost.ghostFrightened.enabled)
+        if (node != null && enabled && !ghost.ghostFrightened.enabled)
         {
             int index = Random.Range(0, node.availableDirections.Count);
             if (node.availableDirections[index] == -ghost.ghostMovementController.charCurrentDirection && node.availableDirections.Count > 1)

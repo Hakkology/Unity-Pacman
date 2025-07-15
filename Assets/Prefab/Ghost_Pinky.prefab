@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: charInitialDirection.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4093818920382808574, guid: 0c7557e5fcaf54bfe8d86830b837c179, type: 3}
+      propertyPath: ghostInitialBehaviour
+      value: 
+      objectReference: {fileID: 5675873749063301249}
     - target: {fileID: 5187381043435980566, guid: 0c7557e5fcaf54bfe8d86830b837c179, type: 3}
       propertyPath: m_Color.b
       value: 0.78561527
@@ -77,3 +81,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c7557e5fcaf54bfe8d86830b837c179, type: 3}
+--- !u!114 &5675873749063301249 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2990566138921353053, guid: 0c7557e5fcaf54bfe8d86830b837c179, type: 3}
+  m_PrefabInstance: {fileID: 7441179228375484380}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75566cc7102b9c9b0a5f8fb877f2ed01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
