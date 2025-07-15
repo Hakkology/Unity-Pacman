@@ -15,7 +15,12 @@ public class NewGameState : GameStateBase
 
     private IEnumerator NewGameRoutine()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1);
+
+        gameManager.SetScore(0);
+        gameManager.SetLives(3);
+        
+        yield return new WaitForSeconds(1);
 
         SetPelletsActive(true);
         SetGhostsActive(true);

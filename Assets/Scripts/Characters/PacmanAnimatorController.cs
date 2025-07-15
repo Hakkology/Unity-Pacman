@@ -7,7 +7,7 @@ public class PacmanAnimatorController : MonoBehaviour
     public Sprite[] pacmanSprites;
     public Sprite[] pacmanEatenSprites;
 
-    private float pacmanAnimationTime = 0.25f;
+    [SerializeField] private float pacmanAnimationTime = 0.25f;
     private bool pacmanAnimationLoop = true;
     void Awake()
     {
@@ -28,11 +28,14 @@ public class PacmanAnimatorController : MonoBehaviour
         if (pacmanAnimationFrame >= pacmanSprites.Length && pacmanAnimationLoop)
             pacmanAnimationFrame = 0;
 
-        // if (pacmanAnimationFrame >= 0 && pacmanAnimationFrame < pacmanSprites.Length)
-        // {
-        spriteRenderer.sprite = pacmanSprites[pacmanAnimationFrame];
-        // }
-        
+        if (pacmanAnimationFrame >= 0 && pacmanAnimationFrame < pacmanSprites.Length)
+            spriteRenderer.sprite = pacmanSprites[pacmanAnimationFrame];
+    }
+
+    private void RestartAnimation()
+    {
+        pacmanAnimationFrame = -1;
+        PlayAnimation();
     }
 
 
