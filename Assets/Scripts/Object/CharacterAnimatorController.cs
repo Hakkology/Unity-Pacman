@@ -44,7 +44,7 @@ public class CharacterAnimatorController : MonoBehaviour
             charSpriteRenderer.sprite = charSprites[charAnimationFrame];
     }
 
-    private void CharRestartAnimation()
+    public void CharRestartAnimation()
     {
         charAnimationFrame = -1;
         CharPlayAnimation();

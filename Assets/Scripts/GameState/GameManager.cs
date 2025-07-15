@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -71,10 +72,12 @@ public class GameManager : MonoBehaviour
 
     public void PowerPelletEaten(PowerPellet powerPellet)
     {
+        for (int i = 0; i < ghostRef.Length; i++)
+            ghostRef[i].ghostFrightened.Enable(powerPellet.duration);
+    
+        PelletEaten(powerPellet);
         CancelInvoke();
         Invoke(nameof(ResetGhostMultiplier), powerPellet.duration);
-        PelletEaten(powerPellet);
-        // EKSTRA STUFF LİKE GHOST CHANGE
     }
 
     private bool HasPellets()
