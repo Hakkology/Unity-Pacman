@@ -1,63 +1,71 @@
-# 📘 README
-
-**Dil | Language** → [Türkçe](#tr) | [English](#en)
-
----
-
-## <a id="tr"></a>🇹🇷 TR
-
-### Unity Pacman – Eğitim Amaçlı Proje
-
-Bu proje, Unity kullanılarak geliştirilmiş sade bir **Pacman** oyunudur. Eğitim amacıyla hazırlanmıştır ve temel oyun mimarisi, yön kontrolü, çarpışma algılama, FSM (State Machine) ve component yapısı gibi konulara odaklanır.
+# Language Options
+- [EN](#pacman-game)
+- [TR](#pacman-oyunu)
 
 ---
 
-### 📦 Temel Özellikler
+# Pacman Game
 
-- 🎯 FSM yapısı ile oyun akışı yönetimi (NewGame, NewRound, GameOver)  
-- 👻 Hayaletler, farklı modlara (kovalama, dağılma, korkmuş) göre davranış değiştirir  
-- 🍒 Pellet ve PowerPellet sistemi  
-- 🕹️ Klasik yön tuşları ile kontrol  
-- 🔄 Animasyon ve yön bakış güncellemesi  
-- 🧱 Raycast ile yön kontrolü ve çarpışma tespiti  
+This project is a simplified recreation of the classic Pacman game, built in Unity for educational purposes. It demonstrates core gameplay architecture, movement control, collision detection, and basic AI behavior using Unity components and C#.
 
----
+## Features
 
-### 🧭 Kontroller
+### 1. Game Flow (FSM)
+- The game uses a finite state machine with states like NewGame, NewRound, and GameOver.
+- Each state manages its own logic via `Enter`, `Update`, and `Exit` methods.
 
-| Tuş      | İşlev        |
-|----------|--------------|
-| W / ↑    | Yukarı git   |
-| S / ↓    | Aşağı git    |
-| A / ←    | Sola git     |
-| D / →    | Sağa git     |
+### 2. Pacman Mechanics
+- The player controls Pacman using arrow keys or WASD.
+- Movement direction is updated based on available paths using raycasting.
 
----
+### 3. Ghost Behavior
+- Ghosts change their behavior depending on the mode: Chase, Scatter, or Frightened.
+- When frightened, ghosts move away from Pacman and slow down.
+- On collision, Pacman loses a life or eats the ghost based on ghost state.
 
-## <a id="en"></a>🇬🇧 EN
+### 4. Pellet System
+- Standard pellets and PowerPellets are placed across the map.
+- Eating all pellets triggers a new round.
+- PowerPellets temporarily change ghost behavior.
 
-### Unity Pacman – Educational Project
+### 5. Collision and Movement
+- Movement and collisions are handled using Unity's physics and raycasting.
+- Ghosts and Pacman rely on `MapNode` detection for directional decisions.
 
-This is a simple **Pacman** game developed with Unity. It is intended for educational use and focuses on basic game architecture, movement control, collision detection, FSM (Finite State Machine), and component-based structure.
-
----
-
-### 📦 Key Features
-
-- 🎯 FSM-based game flow control (NewGame, NewRound, GameOver)  
-- 👻 Ghosts switch behaviors based on modes like chase, scatter, and frightened  
-- 🍒 Pellet and PowerPellet system  
-- 🕹️ Classic arrow key or WASD movement  
-- 🔄 Direction-aware sprite animation  
-- 🧱 Direction checking and collision via Raycast  
+### 6. Score and Progression
+- The score increases based on pellet type and number of ghosts eaten.
+- The ghost score multiplier resets after PowerPellet duration ends.
 
 ---
 
-### 🧭 Controls
+# Pacman Oyunu
 
-| Key      | Action       |
-|----------|--------------|
-| W / ↑    | Move Up      |
-| S / ↓    | Move Down    |
-| A / ←    | Move Left    |
-| D / →    | Move Right   |
+Bu proje, klasik Pacman oyununun Unity ile sadeleştirilmiş bir yeniden yapımıdır. Eğitim amaçlı hazırlanmıştır ve temel oyun mimarisi, hareket kontrolü, çarpışma algılama ve basit AI davranışlarını içermektedir.
+
+## Özellikler
+
+### 1. Oyun Akışı (FSM)
+- Oyun, NewGame, NewRound ve GameOver gibi durumlardan oluşan bir finite state machine (FSM) yapısı kullanır.
+- Her durum kendi `Enter`, `Update` ve `Exit` metodlarıyla kontrol edilir.
+
+### 2. Pacman Mekanikleri
+- Oyuncu Pacman’i yön tuşları veya WASD ile kontrol eder.
+- Hareket yönü, raycast ile kontrol edilen uygun yollara göre güncellenir.
+
+### 3. Hayalet Davranışı
+- Hayaletler kovalama, dağılma ve korkmuş gibi modlara göre davranış değiştirir.
+- Korkmuş modda hayaletler Pacman’den kaçar ve yavaşlar.
+- Çarpışma durumuna göre Pacman can kaybeder veya hayaleti yer.
+
+### 4. Pellet Sistemi
+- Harita üzerinde normal pellet ve PowerPellet nesneleri bulunur.
+- Tüm pelletler yendiğinde yeni tur başlar.
+- PowerPellet, hayaletlerin davranışını geçici olarak değiştirir.
+
+### 5. Çarpışma ve Hareket
+- Hareket ve çarpışmalar Unity'nin fizik sistemi ve raycast kullanılarak yapılır.
+- Hayaletler ve Pacman, yön değiştirme kararlarını `MapNode` üzerinden verir.
+
+### 6. Skor ve İlerleme
+- Skor, yenen pellet türüne ve yenilen hayalet sayısına göre artar.
+- PowerPellet süresi bitince hayalet skor çarpanı sıfırlanır.
