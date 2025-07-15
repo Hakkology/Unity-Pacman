@@ -1,18 +1,18 @@
 using UnityEngine;
 
-public class PacmanController : MonoBehaviour
+public class Pacman : MonoBehaviour
 {
     CircleCollider2D cc;
     Rigidbody2D rb;
-    PacmanMovementController pmc;
-    PacmanAnimatorController pac;
+    CharacterMovementController pmc;
+    CharacterAnimatorController pac;
 
     void Awake()
     {
         cc = GetComponent<CircleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
-        pmc = GetComponent<PacmanMovementController>();
-        pac = GetComponent<PacmanAnimatorController>();
+        pmc = GetComponent<CharacterMovementController>();
+        pac = GetComponent<CharacterAnimatorController>();
     }
 
     void Update()

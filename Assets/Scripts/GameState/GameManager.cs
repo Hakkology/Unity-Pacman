@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set;}
     public Ghost[] ghostRef;
-    public PacmanController pacmanRef;
+    public Pacman pacmanRef;
     public Transform pelletsRef;
 
     public int GhostMultiplier { get; private set; } = 1;
