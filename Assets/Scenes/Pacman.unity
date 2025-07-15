@@ -7168,7 +7168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ghostRef: []
   pacmanRef: {fileID: 1880045509}
-  pelletsRef: {fileID: 1515722667}
+  pelletsRef: {fileID: 0}
 --- !u!1 &1515722666
 GameObject:
   m_ObjectHideFlags: 0

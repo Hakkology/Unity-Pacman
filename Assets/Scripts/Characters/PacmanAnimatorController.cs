@@ -30,7 +30,7 @@ public class PacmanAnimatorController : MonoBehaviour
 
         // if (pacmanAnimationFrame >= 0 && pacmanAnimationFrame < pacmanSprites.Length)
         // {
-            spriteRenderer.sprite = pacmanSprites[pacmanAnimationFrame];
+        spriteRenderer.sprite = pacmanSprites[pacmanAnimationFrame];
         // }
         
     }
