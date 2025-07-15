@@ -10,6 +10,7 @@ public class NewGameState : GameStateBase
 
     public override void Enter()
     {
+        gameManager.ResetGhostMultiplier();
         gameManager.StartCoroutine(NewGameRoutine());
     }
 

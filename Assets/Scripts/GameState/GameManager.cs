@@ -3,14 +3,26 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set;}
     public Ghost[] ghostRef;
     public PacmanController pacmanRef;
     public Transform pelletsRef;
 
+    public int GhostMultiplier { get; private set; } = 1;
     public int Score { get; private set; }
     public int Lives { get; private set; }
-
     private IGameState currentState;
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
 
     void Start()
     {
@@ -31,7 +43,11 @@ public class GameManager : MonoBehaviour
 
     public void SetScore(int score) => Score = score;
     public void SetLives(int lives) => Lives = lives;
-    public void GhostEaten(Ghost ghost) => SetScore(Score + ghost.points);
+    public void GhostEaten(Ghost ghost)
+    {
+        SetScore(Score + ghost.points * GhostMultiplier);
+        GhostMultiplier++;
+    }
 
     public void PacmanEaten()
     {
@@ -42,5 +58,39 @@ public class GameManager : MonoBehaviour
             TransitionToState(new NewRoundState(this));
         else
             TransitionToState(new GameOverState(this));
+    }
+
+    public void PelletEaten(Pellet pellet)
+    {
+        pellet.gameObject.SetActive(false);
+        SetScore(Score + pellet.Points);
+
+        if (!HasPellets())
+            TransitionToState(new NewRoundState(this));
+    }
+
+    public void PowerPelletEaten(PowerPellet powerPellet)
+    {
+        CancelInvoke();
+        Invoke(nameof(ResetGhostMultiplier), powerPellet.duration);
+        PelletEaten(powerPellet);
+        // EKSTRA STUFF LİKE GHOST CHANGE
+    }
+
+    private bool HasPellets()
+    {
+        foreach (Transform pellet in pelletsRef)
+        {
+            if (pellet.gameObject.activeSelf)
+                return true;
+        }
+        return false;
+
+        //return pelletsRef.Cast<Transform>().Any(p => p.gameObject.activeSelf);
+    }
+
+    public void ResetGhostMultiplier()
+    {
+        GhostMultiplier = 1;
     }
 }

@@ -7,12 +7,13 @@ public class NewRoundState : GameStateBase
 
     public override void Enter()
     {
+        gameManager.ResetGhostMultiplier();
         gameManager.StartCoroutine(NewRoundRoutine());
     }
 
     private IEnumerator NewRoundRoutine()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         SetGhostsActive(true);
         SetPacmanActive(true);
