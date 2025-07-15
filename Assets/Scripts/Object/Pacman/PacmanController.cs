@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class PacmanController : MonoBehaviour
 {
-    [SerializeField] CircleCollider2D cc;
-    [SerializeField] Rigidbody2D rb;
-    [SerializeField] PacmanMovementController pmc;
-    [SerializeField] PacmanAnimatorController pac;
+    CircleCollider2D cc;
+    Rigidbody2D rb;
+    PacmanMovementController pmc;
+    PacmanAnimatorController pac;
 
     void Awake()
     {

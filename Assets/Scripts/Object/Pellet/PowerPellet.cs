@@ -15,7 +15,6 @@ public class PowerPellet : Pellet
 
     protected override void Eat()
     {
-        //gameObject.SetActive(false);
-
+        GameManager.Instance.PowerPelletEaten(this);
     }
 }

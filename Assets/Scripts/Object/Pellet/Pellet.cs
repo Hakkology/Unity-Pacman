@@ -14,8 +14,7 @@ public class Pellet : MonoBehaviour
     
     protected virtual void Eat()
     {
-        //gameObject.SetActive(false);
-
+        GameManager.Instance.PelletEaten(this);
     }
 
 }

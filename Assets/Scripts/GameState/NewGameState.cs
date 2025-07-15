@@ -16,6 +16,8 @@ public class NewGameState : GameStateBase
 
     private IEnumerator NewGameRoutine()
     {
+        SetPelletsActive(true);
+        
         yield return new WaitForSeconds(1);
 
         gameManager.SetScore(0);
@@ -23,7 +25,6 @@ public class NewGameState : GameStateBase
         
         yield return new WaitForSeconds(1);
 
-        SetPelletsActive(true);
         SetGhostsActive(true);
         SetPacmanActive(true);
     }
