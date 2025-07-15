@@ -4,7 +4,7 @@
 
 ---
 
-## 🇹🇷 TR
+## <a id="tr"></a>🇹🇷 TR
 
 ### Unity Pacman – Eğitim Amaçlı Proje
 
@@ -34,7 +34,7 @@ Bu proje, Unity kullanılarak geliştirilmiş sade bir **Pacman** oyunudur. Eği
 
 ---
 
-## 🇬🇧 EN
+## <a id="en"></a>🇬🇧 EN
 
 ### Unity Pacman – Educational Project
 
