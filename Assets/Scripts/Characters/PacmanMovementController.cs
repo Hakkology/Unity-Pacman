@@ -80,15 +80,4 @@ public class PacmanMovementController : MonoBehaviour
         // Engel yoksa null döner → hareket edilebilir.
         return hit.collider != null;
     }
-
-    void OnDrawGizmos()
-    {
-        if (Application.isPlaying)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, transform.position + (Vector3)pacmanCurrentDirection * 1.5f);
-        }
-    }
-
-
 }
