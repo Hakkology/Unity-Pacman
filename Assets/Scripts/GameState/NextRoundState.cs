@@ -13,9 +13,12 @@ public class NextRoundState : GameStateBase
     private IEnumerator NextRoundRoutine()
     {
         SetPacmanActive(false);
-        // reset pacman position, will write.
-        SetPelletsActive(true);
+        SetGhostsActive(false);
+
         yield return new WaitForSeconds(1f);
+
+        SetPelletsActive(true);
+        
         gameManager.TransitionToState(new NewRoundState(gameManager));
     }
 

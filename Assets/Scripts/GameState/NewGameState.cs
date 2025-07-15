@@ -11,22 +11,16 @@ public class NewGameState : GameStateBase
     public override void Enter()
     {
         gameManager.ResetGhostMultiplier();
-        gameManager.StartCoroutine(NewGameRoutine());
+        NewGame();
     }
 
-    private IEnumerator NewGameRoutine()
+    private void NewGame()
     {
         SetPelletsActive(true);
-        
-        yield return new WaitForSeconds(1);
-
-        gameManager.SetScore(0);
-        gameManager.SetLives(3);
-        
-        yield return new WaitForSeconds(1);
-
         SetGhostsActive(true);
         SetPacmanActive(true);
+        gameManager.SetScore(0);
+        gameManager.SetLives(3);
     }
 
     public override void Update() { }

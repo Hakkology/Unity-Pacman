@@ -9,10 +9,12 @@ public class CharacterAnimatorController : MonoBehaviour
     public Sprite[] charSprites;
 
     [SerializeField] private float pacmanAnimationTime = 0.25f;
+    [SerializeField] private bool charAnimationRotation = true;
     private bool charAnimationLoop = true;
+
     void Awake()
     {
-        charMovementController = GetComponent<CharacterMovementController>();
+        charMovementController = GetComponentInParent<CharacterMovementController>();
         charSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -23,7 +25,10 @@ public class CharacterAnimatorController : MonoBehaviour
 
     void Update()
     {
-        CharUpdateDirection();
+        if (charAnimationRotation)
+        {
+            CharUpdateDirection();
+        }
     }
 
     private void CharPlayAnimation()

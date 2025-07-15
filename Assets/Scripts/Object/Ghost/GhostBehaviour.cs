@@ -1,0 +1,31 @@
+using UnityEngine;
+
+public class GhostBehaviour : MonoBehaviour
+{
+    public Ghost Ghost { get; private set; }
+    public float behaviourDuration;
+
+    void Awake()
+    {
+        Ghost = GetComponent<Ghost>();
+        enabled = false;
+    }
+
+    public virtual void Enable()
+    {
+        Enable(behaviourDuration);
+    }
+
+    public virtual void Enable(float duration)
+    {
+        enabled = true;
+        CancelInvoke();
+        Invoke(nameof(Disable), duration);
+    }
+
+    public virtual void Disable()
+    {
+        enabled = false;
+        CancelInvoke();
+    }
+}

@@ -13,6 +13,8 @@ public class NewRoundState : GameStateBase
 
     private IEnumerator NewRoundRoutine()
     {
+        //SetPelletsActive(true);
+
         yield return new WaitForSeconds(1f);
 
         SetGhostsActive(true);

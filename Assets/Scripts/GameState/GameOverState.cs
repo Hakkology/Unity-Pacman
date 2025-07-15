@@ -7,7 +7,7 @@ public class GameOverState : GameStateBase
     public override void Enter()
     {
         SetGhostsActive(false);
-        //SetPacmanActive(false);
+        SetPacmanActive(false);
     }
 
     public override void Update()
