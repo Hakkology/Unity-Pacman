@@ -6,7 +6,6 @@ public abstract class GhostBehaviourBase : IGhostState
     protected float timer;
     protected bool hasDuration;
 
-    // duration = 0 -> süresiz
     protected GhostBehaviourBase(float duration = 0f)
     {
         behaviourDuration = duration;
@@ -30,7 +29,6 @@ public abstract class GhostBehaviourBase : IGhostState
 
     protected virtual void OnDurationComplete(Ghost ghost) { /* override edersin */ }
 
-    // İstersen runtime değiştirmek için:
     public void SetDuration(float duration)
     {
         behaviourDuration = duration;
