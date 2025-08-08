@@ -217,12 +217,8 @@ GameObject:
   - component: {fileID: 2519922840089663901}
   - component: {fileID: 5210485031333759202}
   - component: {fileID: 4014371915887666212}
-  - component: {fileID: 4093818920382808574}
   - component: {fileID: 2617221974392243694}
-  - component: {fileID: -752942786318274449}
-  - component: {fileID: -4652945644527163572}
-  - component: {fileID: 2990566138921353053}
-  - component: {fileID: -1719485940626391261}
+  - component: {fileID: 133214560425297333}
   m_Layer: 7
   m_Name: Ghost_Base
   m_TagString: Untagged
@@ -311,21 +307,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &4093818920382808574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5360817276669055368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70567e62c39b90345b027e29c2ecf770, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ghostInitialBehaviour: {fileID: 0}
-  target: {fileID: 0}
-  points: 200
 --- !u!114 &2617221974392243694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,7 +325,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   charInitialDirection: {x: 1, y: 0}
---- !u!114 &-752942786318274449
+--- !u!114 &133214560425297333
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -353,55 +334,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 5360817276669055368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 607306013dcbb8518b5d169bcf66eb86, type: 3}
+  m_Script: {fileID: 11500000, guid: b21a0b87593f90444b7a494ecb88775d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  behaviourDuration: 20
---- !u!114 &-4652945644527163572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5360817276669055368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 697ef62ad4250b1ac9f48cda7752717f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  behaviourDuration: 7
+  target: {fileID: 0}
+  points: 200
+  isHome: 1
+  insideTransform: {fileID: 0}
+  outsideTransform: {fileID: 0}
   body: {fileID: 5187381043435980566}
   eyes: {fileID: 988667269275901790}
   blue: {fileID: 3353610192322306244}
   white: {fileID: 7977843548096412704}
---- !u!114 &2990566138921353053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5360817276669055368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75566cc7102b9c9b0a5f8fb877f2ed01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  behaviourDuration: 0
-  insideTransform: {fileID: 0}
-  outsideTransform: {fileID: 0}
---- !u!114 &-1719485940626391261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5360817276669055368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1084c6e069f306032bd1ef3c5890e417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  behaviourDuration: 8
+  chaseDuration: 3
+  scatterDuration: 3
+  frightenedDuration: 6
+  homeExitSegmentDuration: 3
 --- !u!1 &5957230888783256275
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,8 +549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba17fe7ad7d2f0d8bbf82cd49cc43a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  movementController: {fileID: 0}
+  spriteRenderer: {fileID: 988667269275901790}
+  movementController: {fileID: 2617221974392243694}
   eyesUp: {fileID: 21300000, guid: e7a4d53478c132148ab790c40956300e, type: 3}
   eyesDown: {fileID: 21300000, guid: 7a56d3ce33cfa8745a346be5cd807984, type: 3}
   eyesRight: {fileID: 21300000, guid: 61859c1fcd03fe34bbc146b1ddfc39f9, type: 3}

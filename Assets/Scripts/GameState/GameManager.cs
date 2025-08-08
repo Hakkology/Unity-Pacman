@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
     public void PowerPelletEaten(PowerPellet powerPellet)
     {
         for (int i = 0; i < ghostRef.Length; i++)
-            ghostRef[i].ghostFrightened.Enable(powerPellet.duration);
+            ghostRef[i].SetFrightened(powerPellet.duration);
     
         PelletEaten(powerPellet);
         CancelInvoke();
