@@ -19,6 +19,7 @@ public class NewRoundState : GameStateBase
 
         SetGhostsActive(true);
         SetPacmanActive(true);
+        // SetPelletsActive(true);
     }
 
     public override void Update() { }

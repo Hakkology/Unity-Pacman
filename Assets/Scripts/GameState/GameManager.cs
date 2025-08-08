@@ -42,8 +42,18 @@ public class GameManager : MonoBehaviour
         currentState?.Enter();
     }
 
-    public void SetScore(int score) => Score = score;
-    public void SetLives(int lives) => Lives = lives;
+    public void SetScore(int score)
+    {
+        Score = score;
+        HUDManager.OnScoreChanged(Score);
+    }
+
+    public void SetLives(int lives)
+    {
+        Lives = lives;
+        HUDManager.OnLifeChanged(Lives);
+    }
+
     public void GhostEaten(Ghost ghost)
     {
         SetScore(Score + ghost.points * GhostMultiplier);
