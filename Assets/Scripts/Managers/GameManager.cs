@@ -58,16 +58,6 @@ public class GameManager : MonoBehaviour
     //    YeniRound(yenidenBasliyoruz: true);
     //}
 
-    public void SetScore(int score)
-    {
-        Score = score;
-    }
-
-    public void SetLives(int lives)
-    {
-        Lives = lives;
-    }
-
     //private void OyunBitti()
     //{
     //    pacmanRef.gameObject.SetActive(false);
@@ -95,6 +85,16 @@ public class GameManager : MonoBehaviour
     //        ghost.gameObject.SetActive(true);
     //    pacmanRef.gameObject.SetActive(true);
     //}
+
+    public void SetScore(int score)
+    {
+        Score = score;
+    }
+
+    public void SetLives(int lives)
+    {
+        Lives = lives;
+    }
 
     public void GhostEaten(Ghost ghost)
     {
