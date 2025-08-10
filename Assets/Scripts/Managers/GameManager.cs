@@ -126,6 +126,16 @@ public class GameManager : MonoBehaviour
             StateDegistir(new NewRoundState(this));
     }
 
+    public void PowerPelletEaten(PowerPellet pellet)
+    {
+        for (int i = 0; i < ghostRef.Length; i++)
+            ghostRef[i].ghostFrightened.Enable(pellet.duration);
+
+        PelletEaten(pellet);
+        CancelInvoke();
+        //Invoke(nameof(ResetGhostMultiplier), powerPellet.duration);
+    }
+
     private bool HasPellets()
     {
         foreach (Transform pellet in pelletRef)

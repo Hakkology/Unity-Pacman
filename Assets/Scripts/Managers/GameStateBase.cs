@@ -16,14 +16,32 @@ public abstract class GameStateBase : IGameState
 
     protected void SetGhostsActive(bool active)
     {
-        foreach (Ghost ghost in _manager.ghostRef)
-            ghost.gameObject.SetActive(active);
+        if (active)
+        {
+            foreach (Ghost ghost in _manager.ghostRef)
+            {
+                ghost.ResetState();
+            }
+        }
+        else
+        {
+            foreach (Ghost ghost in _manager.ghostRef)
+            {
+                ghost.gameObject.SetActive(false);
+            }
+        }
     }
 
     protected void SetPacmanActive(bool active)
     {
-        if (_manager.pacmanRef != null)
-            _manager.pacmanRef.gameObject.SetActive(active);
+        if (active)
+        {
+            _manager.pacmanRef.ResetState();
+        }
+        else
+        {
+            _manager.pacmanRef.gameObject.SetActive(false);
+        }
     }
 
     protected void SetPelletsActive(bool active)

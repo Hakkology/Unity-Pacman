@@ -1,12 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pellet : MonoBehaviour
+public class PowerPellet : Pellet
 {
-    public int points = 10;
-
+    public float duration = 8.0f;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Pacman"))
@@ -17,6 +15,6 @@ public class Pellet : MonoBehaviour
 
     private void Eat()
     {
-        GameManager.Instance.PelletEaten(this);
+        GameManager.Instance.PowerPelletEaten(this);
     }
 }

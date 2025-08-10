@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,17 @@ public class Pacman : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         pmc = GetComponent<CharacterMovementController>();
         pac = GetComponent<CharacterAnimatorController>();
+    }
+
+    private void Start()
+    {
+        ResetState();
+    }
+
+    public void ResetState()
+    {
+        pmc.ResetState();
+        gameObject.SetActive(true);
     }
 
     void Update()
@@ -44,4 +56,6 @@ public class Pacman : MonoBehaviour
         //istenilen aksta dönme yapar.
         //transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
     }
+
+
 }

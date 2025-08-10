@@ -28,7 +28,7 @@ public class CharacterMovementController : MonoBehaviour
 
     void Start()
     {
-        Reset();
+        ResetState();
     }
 
     void Update()
@@ -69,7 +69,7 @@ public class CharacterMovementController : MonoBehaviour
         return hit.collider != null;
     }
 
-    private void Reset()
+    public void ResetState()
     {
         speedMultipler = 1;
         mevcutDirection = ilkDirection;

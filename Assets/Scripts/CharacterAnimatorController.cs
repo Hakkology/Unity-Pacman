@@ -13,6 +13,7 @@ public class CharacterAnimatorController : MonoBehaviour
     public Sprite[] animationSprites;
 
     [SerializeField] private float animationTime;
+    [SerializeField] private bool animationRotate;
     private bool animationLoop = true;
 
     private void Awake()
@@ -28,7 +29,10 @@ public class CharacterAnimatorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CharUpdateDirection();
+        if (animationRotate)
+        {
+            CharUpdateDirection();
+        }
     }
 
     private void PlayAnimation()
@@ -47,7 +51,7 @@ public class CharacterAnimatorController : MonoBehaviour
         }
     }
 
-    private void RestartAnimation()
+    public void RestartAnimation()
     {
         animationFrame = -1;
         PlayAnimation();

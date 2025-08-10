@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MapPassageController : MonoBehaviour
+public class HaritaGecitController : MonoBehaviour
 {
     [SerializeField] Transform mapPassageDestination;
     void OnTriggerEnter2D(Collider2D collision)
